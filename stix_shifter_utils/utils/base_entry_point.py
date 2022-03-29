@@ -223,6 +223,7 @@ class BaseEntryPoint:
         self.set_delete_connector(connector)
 
     def setup_transmission_basic(self, connection, configuration):
+        print("basic idea")
         module_name = self.__connector_module
         module_path = "stix_shifter_modules." + module_name + ".stix_transmission"
         module = importlib.import_module(module_path + ".connector")
