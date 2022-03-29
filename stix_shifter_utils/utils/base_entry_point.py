@@ -19,6 +19,7 @@ from stix_shifter_utils.utils.error_response import ErrorResponder
 
 OPTION_LANGUAGE = 'language'
 
+
 class BaseEntryPoint:
 
     def __init__(self, connection, configuration, options):
