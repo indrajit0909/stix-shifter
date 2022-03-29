@@ -84,7 +84,6 @@ class BaseEntryPoint:
             raise Exception('EntryPoint: one of transmission connectors is not configured')
 
     def add_dialect(self, dialect, query_translator=None, results_translator=None, default=False, default_include=True):
-        print("Testing push")
         if not query_translator:
             query_translator = self.create_default_query_translator(dialect)
         if not results_translator:
