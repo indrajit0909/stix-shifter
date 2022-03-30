@@ -26,8 +26,10 @@ jobs:
         script: |
           import os
           print("Directory contents:")
-          for f in os.listdir():
+          print(" ".join(os.listdir('stix_shifter_modules')))
+          for f in os.listdir('stix_shifter_modules'):
               print(f)
+          set_env("TIS_MODULES", " ".join(os.listdir('stix_shifter_modules')))
     - name: Install dependencies
       run: |
         python generate_requirements.py
