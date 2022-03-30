@@ -25,12 +25,14 @@ jobs:
       with:
         script: |
           import os
-          print("Directory contents:")
+          print("Directory contents to test:")
           MODULES_DIR = 'stix_shifter_modules'
+          modules_to_test = []
           for module in os.listdir(MODULES_DIR):
               if (os.path.isdir(os.path.join(MODULES_DIR,module)) and not module.startswith('_')):
                   print(module)
-          set_env("TIS_MODULES", " ".join(os.listdir('stix_shifter_modules')))
+                  modules_to_test.append(module)
+          set_env("TIS_MODULES", " ".join(modules_to_test))
     - name: Install dependencies
       run: |
         python generate_requirements.py
@@ -45,4 +47,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run unit tests with pytest
       run: |
-        pytest
+        pytest -k ${{ env.TIS_MODULES }}
