@@ -32,7 +32,7 @@ class TestSumoLogicConnection(unittest.TestCase, object):
         mock_api_client.return_value = None
         entry_point = EntryPoint(self.connection(), self.configuration())
         check_async = entry_point.is_async()
-        assert check_async is False
+        assert check_async is True
 
     @patch('stix_shifter_modules.sumologic.stix_transmission.api_client.APIClient.ping_data_source')
     def test_ping(self, mock_generate_token, mock_api_client):
