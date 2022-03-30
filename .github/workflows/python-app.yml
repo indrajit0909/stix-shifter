@@ -29,7 +29,7 @@ jobs:
           MODULES_DIR = 'stix_shifter_modules'
           for module in os.listdir(MODULES_DIR):
               if (os.path.isdir(os.path.join(MODULES_DIR,module)) and not module.startswith('_')):
-                  print(f)
+                  print(module)
           set_env("TIS_MODULES", " ".join(os.listdir('stix_shifter_modules')))
     - name: Install dependencies
       run: |
