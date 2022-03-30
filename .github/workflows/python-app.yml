@@ -21,6 +21,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+        script: |
+          import os
+          print("Directory contents:")
+          for f in os.listdir():
+              print(f)
     - name: Install dependencies
       run: |
         python generate_requirements.py
