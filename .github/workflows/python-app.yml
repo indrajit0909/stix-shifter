@@ -8,8 +8,8 @@ on: # [workflow_dispatch]
     branches: [ develop ]
 
 jobs:
-  build:
-    name: unit test
+  UnitTest:
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
