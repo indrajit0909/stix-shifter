@@ -10,6 +10,7 @@ __default_search_path = ['stix_translation', 'json']
 
 
 def read_json(filepath, options, search_path=__default_search_path):
+    print("file helper")
     # logger.debug('call: read_json: ' + json.dumps(options, indent=4))
     # filepath may be:
     #  'to_stix_map.json' -> 'to_stix_map' mapping data if present otherwise contents of 'module'/stix_translation/json/to_stix_map.json
