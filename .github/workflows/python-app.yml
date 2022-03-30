@@ -31,8 +31,8 @@ jobs:
           for module in os.listdir(MODULES_DIR):
               if (os.path.isdir(os.path.join(MODULES_DIR,module)) and not module.startswith('_')):
                   print(module)
-                  modules_to_test.append(os.path.join(MODULES_DIR,module))
-          set_env("TIS_MODULES", "/ ".join(modules_to_test))
+                  modules_to_test.append(os.path.join(MODULES_DIR,module)+"/")
+          set_env("TIS_MODULES", " ".join(modules_to_test))
     - name: Install dependencies
       run: |
         python generate_requirements.py
