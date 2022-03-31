@@ -67,7 +67,7 @@ class TestBigFixResultsToStix(unittest.TestCase):
         assert observed_data['created'] is not None
         assert observed_data['first_observed'] is not None
         assert observed_data['last_observed'] is not None
-        assert observed_data['number_observed'] is not None
+        assert observed_data['number_observed'] is None
 
     def test_custom_property(self):
         """
