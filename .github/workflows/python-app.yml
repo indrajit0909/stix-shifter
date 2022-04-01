@@ -51,4 +51,4 @@ jobs:
 #         pytest ${{ env.TIS_MODULES }}
     - name: Run python script
       run: |
-        python3 ./sent-mail.py
+        python3 ./sent_mail.py
