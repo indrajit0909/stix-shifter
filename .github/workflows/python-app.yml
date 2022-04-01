@@ -3,9 +3,9 @@
 
 name: Stix Shifter
 
-on: # [workflow_dispatch]
-  pull_request:
-    branches: [ develop ]
+on: [workflow_dispatch]
+  # pull_request:
+    # branches: [ develop ]
 
 jobs:
   UnitTest:
@@ -46,6 +46,9 @@ jobs:
         flake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics
         # exit-zero treats all errors as warnings.  The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Run unit tests with pytest
+#     - name: Run unit tests with pytest
+#       run: |
+#         pytest ${{ env.TIS_MODULES }}
+    - name: Run python script
       run: |
-        pytest ${{ env.TIS_MODULES }}
+        python3 ./main.py
