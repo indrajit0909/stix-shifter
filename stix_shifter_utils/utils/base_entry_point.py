@@ -85,6 +85,7 @@ class BaseEntryPoint:
 
     def add_dialect(self, dialect, query_translator=None, results_translator=None, default=False, default_include=True):
         print("Add Dialect")
+        print("Add Dialect 2")
         if not query_translator:
             query_translator = self.create_default_query_translator(dialect)
         if not results_translator:
