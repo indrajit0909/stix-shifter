@@ -3,7 +3,6 @@ from enum import Enum
 class ErrorMapperBase():
     @staticmethod
     def set_error_code(return_obj, code, message=None):
-        print("Error Code")
         if isinstance(code, Enum):
             return_obj['code'] = code.value
         else:
