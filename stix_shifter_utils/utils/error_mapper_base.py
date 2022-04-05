@@ -8,4 +8,4 @@ class ErrorMapperBase():
         else:
             return_obj['code'] = code
         if message is not None:
-            return_obj['error'] = message 
+            return_obj['error'] = message
