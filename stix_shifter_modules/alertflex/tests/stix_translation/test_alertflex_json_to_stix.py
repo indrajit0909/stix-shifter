@@ -73,7 +73,7 @@ class TestAlertflexResultsToStix(unittest.TestCase):
         assert result_bundle_identity['identity_class'] == data_source['identity_class']
 
         observed_data = result_bundle_objects[1]
-        assert observed_data['id'] is None
+        assert observed_data['id'] is not None
         assert observed_data['type'] == "observed-data"
         assert observed_data['created_by_ref'] == result_bundle_identity['id']
 
