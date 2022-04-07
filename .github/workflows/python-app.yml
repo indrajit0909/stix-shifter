@@ -49,7 +49,19 @@ jobs:
     - name: Run unit tests with pytest
       run: |
         pytest ${{ env.TIS_MODULES }}
-    - name: Run python script
+#     - name: Run python script
+#       if: ${{ failure() }}
+#       run: |
+#         python3 ./sent_mail.py
+    - name: Slack Workflow Notification
       if: ${{ failure() }}
-      run: |
-        python3 ./sent_mail.py
+      uses: Gamesight/slack-workflow-status@master
+      with:
+        # Required Input
+        repo_token: ${{secrets.GITHUB_TOKEN}}
+        slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+        # Optional Input
+        channel: '#anthony-test-channel'
+        name: 'Unit Test Cases Workflow'
+        icon_emoji: ':x:'
+        # icon_url: 'https://avatars0.githubusercontent.com/u/1701160?s=96&v=4'
