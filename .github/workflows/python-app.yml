@@ -49,10 +49,6 @@ jobs:
     - name: Run unit tests with pytest
       run: |
         pytest ${{ env.TIS_MODULES }}
-#     - name: Run python script
-#       if: ${{ failure() }}
-#       run: |
-#         python3 ./sent_mail.py
     - name: Slack Workflow Notification
       if: ${{ failure() }}
       uses: Gamesight/slack-workflow-status@master
