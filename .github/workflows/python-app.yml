@@ -51,14 +51,12 @@ jobs:
         pytest ${{ env.TIS_MODULES }}
     - name: Slack Workflow Notification
       if: ${{ failure() }}
-      uses: Gamesight/slack-workflow-status@master
+      uses: ravsamhq/notify-slack-action@v1
       with:
-        # Required Input
-        repo_token: ${{secrets.GITHUB_TOKEN}}
-        slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
-        include_jobs: true
-        # Optional Input
-#         channel: '#anthony-test-channel'
-        name: 'Unit Test Cases Workflow'
-        icon_emoji: ':x:'
-        # icon_url: 'https://avatars0.githubusercontent.com/u/1701160?s=96&v=4'
+        status: ${{ job.status }}
+        notification_title: '{workflow} has {status_message}'
+        message_format: '{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>'
+        footer: 'Linked Repo <{repo_url}|{repo}>'
+        notify_when: 'failure'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
