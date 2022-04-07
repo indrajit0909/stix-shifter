@@ -6,7 +6,6 @@ from .param_validator import choose_module_path
 
 def process_dialects(cli_module, options):
     print("Process Dialect")
-    print("Process Dialect 1")
     module, cli_dialects = __split_module_dialects(cli_module)
     if 'dialects' not in options or options['dialects'] is None:
         options['dialects'] = []
