@@ -56,7 +56,7 @@ jobs:
         status: ${{ job.status }}
         token: ${{ secrets.GITHUB_TOKEN }}
         notification_title: '{workflow} {job} has {status_message}'
-        message_format: '{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>, you can check the workflow logs here: {workflow_url}'
+        message_format: '{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>'
         footer: 'Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>'
         notify_when: 'failure'
       env:
