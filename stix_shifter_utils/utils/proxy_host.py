@@ -19,7 +19,7 @@ class ProxyHost():
             self.options = self.request_args.get("options", {})
 
     def transform_query(self):
-        print("Transform ----")
+        print("Transform")
         query = self.request_args["data"]
         translation = stix_translation.StixTranslation()
         dsl = translation.translate(self.module, 'query', '{}', query, self.options)
