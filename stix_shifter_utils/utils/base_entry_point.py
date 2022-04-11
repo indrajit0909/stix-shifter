@@ -103,6 +103,7 @@ class BaseEntryPoint:
 
     def setup_translation_simple(self, dialect_default, query_translator=None, results_translator=None):
         print("set up")
+        print("set up again")
         module_name = self.__connector_module
         dialects = dialect_list(module_name)
         for dialect in dialects:
