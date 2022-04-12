@@ -40,6 +40,7 @@ def read_json(filepath, options, search_path=__default_search_path):
 
 
 def get_json_path(search_path=__default_search_path, depth=3):
+    print("Get JSON")
     caller_file_path = traceback.extract_stack()[-depth].filename
     path = caller_file_path.split(os.sep)
     if not path[0]:
