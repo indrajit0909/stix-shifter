@@ -102,6 +102,8 @@ class BaseEntryPoint:
         return self
 
     def setup_translation_simple(self, dialect_default, query_translator=None, results_translator=None):
+        print("set up")
+        print("set up again")
         module_name = self.__connector_module
         dialects = dialect_list(module_name)
         for dialect in dialects:
@@ -109,6 +111,7 @@ class BaseEntryPoint:
                              default=(dialect == dialect_default))
 
     def create_default_query_translator(self, dialect):
+        print("Demo")
         module_name = self.__connector_module
         module = importlib.import_module(
                     "stix_shifter_modules." + module_name + ".stix_translation.query_translator")
