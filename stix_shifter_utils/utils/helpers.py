@@ -1,5 +1,4 @@
 def dict_merge(dct, merge_dct, add_keys=True):
-    print('here')
     """ 
     https://gist.github.com/angstwad/bf22d1822c38a92ec0a9?permalink_comment_id=2622319#gistcomment-2622319
     
